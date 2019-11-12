@@ -3,7 +3,7 @@ Docker images for building and testing Android applications using the Android SD
 
 # Images Available
 There are 3 flavours of images provided:
-* `sdk`: barebones OpenJDK8 + Android SDK + platform tools
+* `sdk`: barebones OpenJDK 8 + Android SDK + platform tools
 * `tools`: `sdk` + the latest android platform + build tools
 * `ndk`: `sdk` + the latest NDK tools
 

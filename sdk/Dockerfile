@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk8:alpine-slim
+FROM openjdk:8-slim
 
 # Image arguments
 ARG ANDROID_SDK_VERSION 
@@ -8,10 +8,9 @@ ENV HOME /root
 ENV ANDROID_HOME /opt/android
 
 # Install dependencies
-RUN apk add --no-cache bash git unzip wget && \
-    apk add --virtual .rundeps $runDeps && \
-    rm -rf /tmp/* && \
-    rm -rf /var/cache/apk/*
+RUN apt-get update && \
+    apt-get install --no-install-recommends -yq git unzip wget && \
+    rm -rf /var/lib/apt/lists/*
 
 # Download and install Android SDK
 WORKDIR $ANDROID_HOME
